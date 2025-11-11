@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Banana Chill - Play</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">🍌 Banana Chill</div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <button id="logout">Logout</button>
+    </div>
+  </header>
+
+  <main class="game-wrap">
+    <section class="panel left">
+      <div class="status">
+        <div>XP: <span id="xp">0</span></div>
+        <div>Level: <span id="level">1</span></div>
+        <div>Time: <span id="timer">30</span>s</div>
+      </div>
+
+      <img id="puzzle-img" src="" alt="Puzzle image" />
+
+      <input id="answer" placeholder="Type your answer here (number, text)" />
+
+      <div class="btn-row">
+        <button id="submit-btn">Submit</button>
+        <button id="next-btn" disabled>Next</button>
+      </div>
+
+      <div id="feedback" class="small"></div>
+    </section>
+
+    <aside class="panel right">
+      <h3>Player Progress</h3>
+      <div><strong id="player-name">Guest</strong></div>
+      <div class="badges" id="badges"></div>
+
+      <hr />
+      <div class="rules">
+        <strong>Rules</strong>
+        <ul>
+          <li>Correct → gain XP and can progress.</li>
+          <li>Wrong → no XP; correct answer will show; must try again.</li>
+          <li>If time runs out → Game Over; restart the round.</li>
+        </ul>
+      </div>
+
+      <div class="feedback-container">
+        <button id="feedback-btn" class="feedback-btn">View Feedback</button>
+      </div>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
