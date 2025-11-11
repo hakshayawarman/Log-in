@@ -1,82 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Banana Puzzle | Login & Signup</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav">
-        <a href="#" class="nav_logo">Banana Puzzle</a>
-        <ul class="nav_items">
-          <li class="nav_item">
-            <a href="#" class="nav_link">Home</a>
-            <a href="#" class="nav_link">Game</a>
-            <a href="#" class="nav_link">About</a>
-            <a href="#" class="nav_link">Feedback</a>
-          </li>
-        </ul>
-        <button class="button" id="form-open">Login</button>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Banana Chill — Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="nav-wrap">
+    <div class="nav-inner">
+      <div class="brand">🍌 <span>Banana Chill</span></div>
+      <nav class="links">
+        <a href="#" class="active">Home</a>
+        <a href="#">Game</a>
+        <a href="#">About</a>
+        <a href="#">Feedback</a>
       </nav>
-    </header>
+      <button id="open-auth" class="cta">Login / Sign up</button>
+    </div>
+  </header>
 
-    <section class="home">
-      <div class="form_container">
-        <i class="uil uil-times form_close"></i>
+  
 
-        <!-- Login Form -->
-        <div class="form login_form">
-          <form action="#">
-            <h2>Welcome Back 🍌</h2>
-            <div class="input_box">
-              <input type="email" placeholder="Enter your email" required />
-              <i class="uil uil-envelope-alt email"></i>
-            </div>
-            <div class="input_box">
-              <input type="password" placeholder="Enter your password" required />
-              <i class="uil uil-lock password"></i>
-              <i class="uil uil-eye-slash pw_hide"></i>
-            </div>
-            <div class="option_field">
-              <span class="checkbox">
-                <input type="checkbox" id="check" />
-                <label for="check">Remember me</label>
-              </span>
-              <a href="#" class="forgot_pw">Forgot password?</a>
-            </div>
-            <button class="button">Login Now</button>
-            <div class="login_signup">Don’t have an account? <a href="#" id="signup">Signup</a></div>
-          </form>
-        </div>
+  <!-- CENTER CONTENT (title + subtitle) -->
+  <main class="hero">
+    <h1>Banana Chill</h1>
+    <p class="tag">Solve puzzles • Earn XP • Level up</p>
+    <button id="open-auth-hero" class="cta ghost">Play Now</button>
+  </main>
 
-        <!-- Signup Form -->
-        <div class="form signup_form">
-          <form action="#">
-            <h2>Join the Puzzle 🧩</h2>
-            <div class="input_box">
-              <input type="email" placeholder="Enter your email" required />
-              <i class="uil uil-envelope-alt email"></i>
-            </div>
-            <div class="input_box">
-              <input type="password" placeholder="Create password" required />
-              <i class="uil uil-lock password"></i>
-              <i class="uil uil-eye-slash pw_hide"></i>
-            </div>
-            <div class="input_box">
-              <input type="password" placeholder="Confirm password" required />
-              <i class="uil uil-lock password"></i>
-              <i class="uil uil-eye-slash pw_hide"></i>
-            </div>
-            <button class="button">Signup Now</button>
-            <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
-          </form>
-        </div>
+  <!-- AUTH MODAL (Login / Signup) -->
+  <div id="auth-modal" class="auth-modal" aria-hidden="true">
+    <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <button class="close-btn" aria-label="Close" id="auth-close"><i class="uil uil-times"></i></button>
+
+      <div class="tabs">
+        <button id="tab-login" class="tab active">Login</button>
+        <button id="tab-signup" class="tab">Sign up</button>
       </div>
-    </section>
 
-    <script src="script.js"></script>
-  </body>
+      <!-- LOGIN FORM -->
+      <form id="login-form" class="auth-form" autocomplete="on">
+        <h2 id="auth-title">Welcome back</h2>
+        <label class="field">
+          <span class="label-text">Email</span>
+          <div class="input-wrap">
+            <input type="email" name="email" required placeholder="you@example.com" />
+            <i class="uil uil-envelope-alt icon"></i>
+          </div>
+        </label>
+
+        <label class="field">
+          <span class="label-text">Password</span>
+          <div class="input-wrap">
+            <input type="password" name="password" required placeholder="••••••••" />
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash pw-toggle" data-target="login-password"></i>
+          </div>
+        </label>
+
+        <div class="row-between">
+          <label class="small"><input type="checkbox" name="remember" /> Remember</label>
+          <a href="#" class="small link">Forgot?</a>
+        </div>
+
+        <button type="submit" class="btn primary">Login</button>
+      </form>
+
+      <!-- SIGNUP FORM (hidden initially) -->
+      <form id="signup-form" class="auth-form hidden" autocomplete="on">
+        <h2>Create account</h2>
+
+        <label class="field">
+          <span class="label-text">Email</span>
+          <div class="input-wrap">
+            <input type="email" name="su-email" required placeholder="you@example.com" />
+            <i class="uil uil-envelope-alt icon"></i>
+          </div>
+        </label>
+
+        <label class="field">
+          <span class="label-text">Password</span>
+          <div class="input-wrap">
+            <input id="signup-password" type="password" name="su-password" required placeholder="min 6 chars" />
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash pw-toggle" data-target="signup-password"></i>
+          </div>
+        </label>
+
+        <label class="field">
+          <span class="label-text">Confirm Password</span>
+          <div class="input-wrap">
+            <input type="password" name="su-password2" required placeholder="confirm password" />
+            <i class="uil uil-lock icon"></i>
+          </div>
+        </label>
+
+        <button type="submit" class="btn primary">Sign up</button>
+      </form>
+
+      <p class="foot-note small">By continuing you accept our <a href="#">terms</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
