@@ -1,0 +1,181 @@
+/* ===== Background ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background: url("bag04.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Navbar (original design kept) ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(90deg, #f7d716, #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  z-index: 150;
+}
+
+header .logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+header .nav-right a {
+  color: #fff;
+  margin-right: 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header .nav-right button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: #111;
+  font-weight: 600;
+}
+
+/* ===== Game Layout ===== */
+.game-wrap {
+  max-width: 900px;
+  margin: 110px auto 40px;
+  padding: 20px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  padding: 18px;
+}
+
+.left {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.right {
+  width: 320px;
+}
+
+#puzzle-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  background: #f3f3f3;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.status div {
+  background: #fafafa;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 92px;
+}
+
+#answer {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+#submit-btn,
+#next-btn {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(90deg, #f7d716, #3b82f6);
+  color: #fff;
+}
+
+#feedback {
+  margin-top: 12px;
+  font-weight: 600;
+  min-height: 24px;
+}
+
+#correct-answer {
+  color: #e53935;
+  font-weight: 600;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eee;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.badge.earned {
+  background: linear-gradient(90deg, #f7d716, #3b82f6);
+  color: #fff;
+}
+
+.rules ul {
+  padding-left: 18px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.feedback-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 820px) {
+  .game-wrap {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .right {
+    width: 100%;
+  }
+}
