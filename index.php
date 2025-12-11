@@ -23,7 +23,7 @@ $login_error = $login_error ?? '';
 <header class="nav-wrap">
   <div class="nav-inner">
     <div class="brand">🍌 Banana Chill</div>
-    <nav class="links" aria-label="Primary"><a href="#">About</a></nav>
+    <nav class="links" aria-label="Primary"><a href="#"></a></nav>
   </div>
 </header>
 
